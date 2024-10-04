@@ -5,7 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body><!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recomendador de Filmes</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            let campoIdade;
+            let campoFantasia;
+            let campoAventura;
     
+            function setup() {
+                createCanvas(800, 400);
+                createElement("h2", "Recomendador de jogos");
+                createSpan("Sua idade:");
+                campoIdade = createInput("5");
+                campoFantasia = createCheckbox("Gosta de fantasia?");
+                campoAventura = createCheckbox("Gosta de aventura?");
+            }
+    
+            function draw() {
+                background("white");
+                let idade = campoIdade.value();
+                let gostaDeFantasia = campoFantasia.checked();
+                let gostaDeAventura = campoAventura.checked();
+                let recomendacao = geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura);
+    
+                fill(color(76, 0, 115));
+                textAlign(CENTER, CENTER);
+                textSize(38);
+                text(recomendacao, width / 2, height / 2);
+            }
+    
+            function geraRecomendacao(idade, gostaDepoder, gostaDeLuta) {
+                if (idade >= 10) {
+                     return "<iframe src=<iframe src="https://scratch.mit.edu/projects/360045678/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    if (idade >= 14) {
+                        return "<iframe src="https://scratch.mit.edu/projects/884410653/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>";
+                    } else {
+                        if (idade >= 16) {
+                            if (gostaDeFantasia || gostaDeAventura) {
+                                return "<iframe src="https://scratch.mit.edu/projects/876857061/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>";          
+                            } else {
+                                return "Ladrões de bicicleta";
+                            }
+                        } else {
+                            if (gostaDeFantasia) {
+                                return "As aventuras de pi";
+                            } else {
+                                return "Depois da chuva";
+                            }
+                        }
+                    }
+                } else {
+                    if (gostaDeFantasia) {
+                        return "A viagem de chihiro";
+                    } else {
+                        return "O feitiço do tempo";
+                    }
+                }
+            }
+        </script>
+    </body>
+    </html>
 </body>
 </html>
